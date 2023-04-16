@@ -1,0 +1,10 @@
+service: "service:svc"
+labels:
+   owner: Skyrax
+   stage: prod
+include:
+   - "service.py"
+python:
+   packages:
+   - numpy
+   - keras_nlp

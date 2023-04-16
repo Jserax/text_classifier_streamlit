@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  app:
+    image: skyraxer/text_classifier:latest
+    #build: .
+    ports:
+      - "8000:8000"
+    command: bash -c "
+      bentoml build -f ./bentofile.yaml 
+      && bentoml serve text_classifier:latest --host localhost --port 
+      && streamlit app.py --server.port 8000
+      "
