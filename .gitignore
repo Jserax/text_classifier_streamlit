@@ -129,4 +129,5 @@ dmypy.json
 .pyre/
 
 #
-data/processed/
+data/processed/test.csv
+data/processed/train.csv
