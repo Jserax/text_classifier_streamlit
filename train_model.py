@@ -80,7 +80,7 @@ def train_model():
     model.fit(train_ds, epochs=EPOCHS,
               validation_data=test_ds,
               class_weight=CLASS_WEIGHTS)
-    bentoml.keras.save_model("text_classifier", model)
+    bentoml.keras.save_model("my_keras_model", model)
 
 
 if __name__ == "__main__":
