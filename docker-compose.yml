@@ -7,7 +7,7 @@ services:
     ports:
       - "8000:8000"
     command: bash -c "
-      bentoml build -f ./bentofile.yaml 
-      && bentoml serve text_classifier:latest --host localhost --port 
-      && streamlit app.py --server.port 8000
+      (bentoml build -f ./bentofile.yaml)
+      && (bentoml serve my_keras_model:latest --host localhost --port 3000 &)
+      && (streamlit run app.py --server.port 8000) 
       "
